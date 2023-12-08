@@ -1,5 +1,9 @@
 # BrokenSelectors
 
+## Reproduction of issue
+In `app.component.html` see the `vmLong` vs `vm` inference.
+`vmLong` the variables are unresolved
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
 
 ## Development server
