@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 import {
     selectAppComponentVm,
+    selectAppComponentVmDestructuredObject,
     selectAppComponentVmLong,
 } from './store/app-component.selectors';
-import { Store } from '@ngrx/store';
 import { AppState } from './store/app.reducer';
 
 @Component({
@@ -14,6 +15,7 @@ import { AppState } from './store/app.reducer';
 export class AppComponent {
     vm$ = this.store.select(selectAppComponentVm);
     vmLong$ = this.store.select(selectAppComponentVmLong);
+    vmDestructured$ = this.store.select(selectAppComponentVmDestructuredObject);
 
     constructor(private store: Store<AppState>) {}
 }

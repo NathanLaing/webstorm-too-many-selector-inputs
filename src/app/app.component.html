@@ -3,6 +3,9 @@
         <h1>Hello {{ vm.name }}</h1>
     </section>
     <section *ngIf="vmLong$ | async as vmLong">
-        <h1>Hello {{ vmLong.id9 }}</h1>
+        <h1>Hello {{ vmLong.id }}</h1>
+        </section>
+        <section *ngIf="vmDestructured$ | async as vmDestructured">
+            <h1>Hello {{ vmDestructured.id9 }}</h1>
     </section>
 </main>
