@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import {
+    selectAppComponentVm,
+    selectAppComponentVmLong,
+} from './store/app-component.selectors';
+import { Store } from '@ngrx/store';
+import { AppState } from './store/app.reducer';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'broken-selectors';
+    vm$ = this.store.select(selectAppComponentVm);
+    vmLong$ = this.store.select(selectAppComponentVmLong);
+
+    constructor(private store: Store<AppState>) {}
 }
